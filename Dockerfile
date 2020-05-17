@@ -57,5 +57,9 @@ RUN a2dissite 000-default.conf
 RUN a2ensite 001-iipsrv.conf
 
 RUN rm -rf /var/lib/apt/lists/*
+RUN rm -rf /tmp/openjpeg \
+    && rm -rf /tmp/iiif-validator-1.0.5 \
+    && rm -rf /tmp/iip
+
 
 CMD service apache2 start && tail -f /dev/null
