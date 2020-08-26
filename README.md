@@ -22,6 +22,24 @@ Or just download prebuild container:
 docker pull registry.gitlab.whiteaster.com/openforestdata/backend/iipimageserver-with-openjpg:master
 ```
 
+Docker-compose example:
+```
+version: "3.7"
+services:
+
+    tiff_iipimages:
+        image: "registry.gitlab.whiteaster.com/openforestdata/backend/iipimageserver-with-openjpg:master"
+        ports:
+            - 8080:80
+        volumes:
+            - tiff_files:/var/www/localhost/images
+
+volumes: 
+    tiff_files:
+
+```
+After launching the website, it will be available at: http://localhost:8080/
+
 ## Deployment
 
 ## Contribution
